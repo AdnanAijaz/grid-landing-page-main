@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+
+  <title>Frontend Mentor | Grid landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+
+    body {
+      background-color: hsl(228, 99%, 58%);
+      color: hsl(0, 0%, 100%);
+      font-family: "Inter", sans-serif;
+      position: relative;
+    }
+
+    nav {
+      width: 100vw;
+      height: 10vh;
+      border-bottom: 0.2px solid hsl(224, 100%, 95%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: hsl(0, 0%, 100%);
+      padding: 2px 10px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dropdown {
+      background-color: hsl(228, 100%, 60%);
+      height: 80vh;
+      width: 20vw;
+      position: absolute;
+      right: 0;
+      display: none;
+    }
+
+    .dropdown-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .dropdown-content a {
+      width: 100%;
+      height: 50px;
+      font-size: 17px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 700;
+      text-align: end;
+      padding: 7px 10px 2px 0px;
+
+    }
+
+    .dropdown-content a:hover {
+      text-decoration: underline;
+    }
+
+    .menu button:focus+.dropdown {
+      display: block;
+    }
+    .menu button:focus + nav{
+      background-color: hsl(228, 100%, 60%);
+    }
+    .menu button{
+      background-color: transparent;
+      outline: none;
+      border: none;
+    }
+
+    .inner-container1 {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100vw;
+      height: 70vh;
+      display: flex;
+    }
+
+    .heading {
+      width: 80%;
+      padding: 5px 260px 10px 5px;
+
+    }
+
+    .heading h1 {
+      font-weight: 500;
+    }
+
+    .para {
+      width: 80%;
+      padding: 5px 200px 10px 5px;
+
+    }
+
+    .para p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: hsl(224, 100%, 95%);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+      width: 50%;
+    }
+
+    .grid-item {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      border: 0.2px solid hsl(224, 100%, 95%);
+
+    }
+
+    .grid-item:active {
+      background-color: hsl(220, 100%, 64%);
+    }
+
+    .inner-grid1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .inner-grid2 span {
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    .inner-grid2 p {
+      font-size: 12px;
+      font-weight: 200;
+      color: hsl(224, 100%, 95%);
+    }
+
+    footer {
+      height: 10vh;
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      border-top: 0.2px solid hsl(224, 100%, 95%);
+
+    }
+
+    .copyright {
+      display: flex;
+    }
+
+    .copyright span,
+    .copyright p {
+      font-size: 12px;
+      font-weight: 200;
+      color: hsl(224, 100%, 95%);
+    }
+
+    .text p {
+      font-size: 12px;
+      font-weight: 200;
+      color: hsl(224, 100%, 95%);
+    }
+
+
+
+    @media screen and (max-width: 375px) {
+     .container{
+      flex-direction: column;
+      height: 100%;
+     }
+     .dropdown{
+      width: 100vw;
+     }
+     .inner-container1{
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+        }
+     .heading{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+     }
+     .para{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+     }
+     .grid-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+     }
+     .grid-item{
+      width:100vw;
+      padding: 15px 5px;
+      height: 170px;
+      justify-content: space-between;
+     }
+     
+     footer{
+      flex-direction: column;
+      height:5% ;
+     }
+}
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(224, 100%, 95%);
+      ;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">
+      <span>&bull;</span>
+      <h4>Bridge Collective</h4>
+
+    </div>
+    <div class="menu">
+      <button><img src="./assets/images/icon-menu.svg" alt="menu icon"></button>
+      <div class="dropdown">
+        <div class="dropdown-content">
+          <a href="#">About</a>
+          <a href="#">Our Work</a>
+          <a href="#">Partners</a>
+          <a href="#">Annual Report</a>
+          <a href="#">Donate</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="inner-container inner-container1">
+      <div class="heading">
+        <h1>
+          A classroom for every child.</h1>
+      </div>
+      <div class="para">
+        <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a
+          graduate
+          tomorrow.</p>
+      </div>
+    </div>
+    <div class="inner-container grid-container">
+      <div class="grid-item1 grid-item">
+        <div class="inner-grid1"><img src="./assets/images/icon-sparkle.svg">
+          <h4>2.4M</h4>
+        </div>
+        <div class="inner-grid2"><span>Students reached</span>
+          <p>Across 31 countries since 2011.</p>
+        </div>
+      </div>
+      <div class="grid-item2 grid-item">
+        <div class="inner-grid1"><img src="./assets/images/icon-plus.svg">
+          <h4>1,284</h4>
+        </div>
+        <div class="inner-grid2">
+          <span>Schools partnered</span>
+          <p>In 14 countries, from Kenya to Guatemala.</p>
+        </div>
+      </div>
+      <div class="grid-item3 grid-item">
+        <div class="inner-grid1">
+          <img src="./assets/images/icon-arrow-right.svg">
+          <h4>38K</h4>
+        </div>
+        <div class="inner-grid2">
+          <span>Teachers trained</span>
+          <p>Equipped with modern tools and methodology.</p>
+        </div>
+      </div>
+      <div class="grid-item4 grid-item">
+        <div class="inner-grid1">
+          <img src="./assets/images/icon-trending-up.svg">
+          <h4>3.1×</h4>
+        </div>
+        <div class="inner-grid2">
+          <span>Graduation lift</span>
+          <p>Partner schools outperform national averages 3x.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright"><span>&copy;</span>
+      <p>2026 Bridge Collective</p>
+    </div>
+    <div class="text">
+      <p>Registered charity 12345678</p>
+    </div>
+  </footer>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Codify</a>.
+  </div>
+</body>
+
+</html>
